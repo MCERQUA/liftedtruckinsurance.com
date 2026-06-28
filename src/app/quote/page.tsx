@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Navbar } from "@/components/sections/Navbar";
 import { Footer } from "@/components/sections/Footer";
@@ -19,7 +19,7 @@ const trustItems = [
 ];
 
 export default function QuotePage() {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState({ traffic_source: "", landing_url: "",
     name: "", businessName: "", email: "", phone: "", state: "", serviceType: "", yearsInBusiness: "", message: "", "bot-field": "",
   });
   const [submitted, setSubmitted] = useState(false);
@@ -29,6 +29,15 @@ export default function QuotePage() {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
+
+  useEffect(() => {
+    try {
+      const p = new URLSearchParams(window.location.search);
+      let src = p.get("utm_source") || p.get("ref") || "";
+      if (!src && document.referrer) { try { src = new URL(document.referrer).hostname; } catch { src = document.referrer; } }
+      setFormData((f) => ({ ...f, traffic_source: src || "direct", landing_url: window.location.href }));
+    } catch {}
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -100,6 +109,8 @@ export default function QuotePage() {
                   <FadeIn>
                     <form name="quote" data-netlify="true" netlify-honeypot="bot-field" onSubmit={handleSubmit} className="rounded-3xl bg-white border border-adobe shadow-card p-7 md:p-9 space-y-5">
                       <input type="hidden" name="form-name" value="quote" />
+                      <input type="hidden" name="traffic_source" id="__aeo_src" value={formData.traffic_source} readOnly />
+                      <input type="hidden" name="landing_url" id="__aeo_url" value={formData.landing_url} readOnly />
                       <input name="bot-field" type="hidden" value={formData["bot-field"]} onChange={handleChange} className="hidden" />
 
                       <div className="grid sm:grid-cols-2 gap-4">
