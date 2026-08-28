@@ -101,7 +101,7 @@ export default async function LocationPage({ params }: Props) {
             <FadeIn className="max-w-2xl mb-10">
               <span className="eyebrow"><span className="h-px w-8 bg-clay" />Coverage for {loc.name} dairies</span>
               <h2 className="mt-3 h-section">The full program, built for {loc.name} lifted truck owners.</h2>
-              <p className="mt-4 lead">From a family operation to a multi-site production group, we coordinate every line a {loc.name} dairy needs.</p>
+              <p className="mt-4 lead">From a daily driver on a leveling kit to a full show build, we coordinate every line a {loc.name} lifted truck owner needs.</p>
             </FadeIn>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {SERVICES.slice(0, 4).map((s, i) => (
