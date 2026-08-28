@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     title: `${SITE.name} | Contractors Choice Agency`,
     description:
       "Specialized insurance for lifted trucks — modified vehicle mortality, modified trucking parlor & barn property, equipment breakdown with modified truck spoilage, product liability, manure-runoff pollution, workers' comp, and commercial auto. Licensed all 50 states. 15-min quotes.",
-    images: [{ url: "/images/og-image.jpg", width: 1200, height: 630, alt: `${SITE.name} — lifted truck coverage` }],
+    images: [{ url: "/images/og-image.jpg", width: 1200, height: 624, alt: `${SITE.name} — lifted truck coverage` }],
   },
   twitter: {
     card: "summary_large_image",
