@@ -89,7 +89,7 @@ export default async function LocationPage({ params }: Props) {
 
               <FadeIn direction="left" className="lg:col-span-5">
                 <div className="rounded-t-[10rem] rounded-b-3xl overflow-hidden border-4 border-white shadow-warm-lg">
-                  <img src="/images/coverage.jpg" alt={`Dairy farm in ${loc.name}`} className="w-full h-[300px] md:h-[360px] object-cover" loading="lazy" />
+                  <img src="/images/coverage.jpg" alt={`Lifted truck coverage in ${loc.name}`} className="w-full h-[300px] md:h-[360px] object-cover" loading="lazy" />
                 </div>
               </FadeIn>
             </div>
@@ -99,7 +99,7 @@ export default async function LocationPage({ params }: Props) {
         <section className="bg-cream py-16 md:py-20">
           <div className="container-tight">
             <FadeIn className="max-w-2xl mb-10">
-              <span className="eyebrow"><span className="h-px w-8 bg-clay" />Coverage for {loc.name} dairies</span>
+              <span className="eyebrow"><span className="h-px w-8 bg-clay" />Coverage for {loc.name} lifted truck owners</span>
               <h2 className="mt-3 h-section">The full program, built for {loc.name} lifted truck owners.</h2>
               <p className="mt-4 lead">From a daily driver on a leveling kit to a full show build, we coordinate every line a {loc.name} lifted truck owner needs.</p>
             </FadeIn>
@@ -117,7 +117,7 @@ export default async function LocationPage({ params }: Props) {
           </div>
         </section>
 
-        <FAQ items={locFaqs} eyebrow={`${loc.name} — FAQ`} title={<>Dairy insurance questions for <span className="text-clay">{loc.name}</span></>} background="sand" />
+        <FAQ items={locFaqs} eyebrow={`${loc.name} — FAQ`} title={<>Lifted truck insurance questions for <span className="text-clay">{loc.name}</span></>} background="sand" />
 
         <CTABand title={`Insuring lifted truck owners in ${loc.name} since 2005`} description={`Local knowledge, A-rated markets, and 15-minute quotes. Call ${SITE.phone} or request a quote online.`} />
       </main>
