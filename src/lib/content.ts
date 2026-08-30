@@ -10,7 +10,7 @@ export const COPY = {
     h1Highlight: "Modified 4x4s & Show Builds",
     subcopy:
       "Agreed value, custom parts, off-road rider, and show truck coverage — built for lifted trucks, suspension mods, oversized tires, and aftermarket builds that standard policies won't touch.",
-    imageAlt: "Heavily lifted 4x4 truck on rugged mountain trail",
+    imageAlt: "Lifted crew-cab pickup on a rocky ridge at sunset, riding on oversized mud-terrain tires and black aftermarket wheels",
     statValue: "800+",
     statLabel: "Modified trucks insured nationwide",
   },
@@ -46,7 +46,7 @@ export const COPY = {
     h2Lead: "Writing Lifted Truck Coverage",
     h2Highlight: "in All 50 States",
     lead: "From Texas truck shows to Colorado trail systems and Arizona desert crawls, our specialty carrier partners write modified vehicle programs in every state.",
-    imageAlt: "USA coverage map for lifted truck insurance",
+    imageAlt: "Lifted Ford Super Duty on a desert highway, showing its suspension lift and oversized mud-terrain tires",
     badgeTitle: "All 50 states",
     badgeSub: "Licensed & actively writing",
   },
@@ -109,7 +109,7 @@ export const COPY = {
     h1Lead: "Built for Truck Enthusiasts by",
     h1Highlight: "People Who Get Modified Vehicles",
     lead: "Contractors Choice Agency has specialized in non-standard and modified vehicle insurance since 2005. We know why stock book value doesn't apply to your build — and we write programs that actually cover what you have.",
-    imageAlt: "Lifted Truck Insurance team — Contractors Choice Agency",
+    imageAlt: "Owner inspecting his lifted Silverado in a driveway, with large aftermarket wheels and mud-terrain tires",
     storyEyebrow: "Our story",
     storyTitle: "Two Decades Protecting Modified Builds",
     storyLead:

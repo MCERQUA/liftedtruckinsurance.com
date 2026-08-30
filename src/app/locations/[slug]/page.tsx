@@ -89,7 +89,7 @@ export default async function LocationPage({ params }: Props) {
 
               <FadeIn direction="left" className="lg:col-span-5">
                 <div className="rounded-t-[10rem] rounded-b-3xl overflow-hidden border-4 border-white shadow-warm-lg">
-                  <img src="/images/coverage.jpg" alt={`Lifted truck coverage in ${loc.name}`} className="w-full h-[300px] md:h-[360px] object-cover" loading="lazy" />
+                  <img src="/images/coverage.jpg" alt={`Lifted truck on oversized mud-terrain tires — lifted truck insurance in ${loc.name}`} className="w-full h-[300px] md:h-[360px] object-cover" loading="lazy" />
                 </div>
               </FadeIn>
             </div>
