@@ -40,6 +40,26 @@ export default function QuotePage() {
     current_coverage_limits: "",
     prior_auto_insurance: "",
     coverage_type: "",
+    lienholderName: "",
+    lienholderAddress: "",
+    liftHeightInches: "",
+    tireSize: "",
+    suspensionDetails: "",
+    garagingZip: "",
+    annualMileage: "",
+    vehicleUse: "",
+    requestedLimits: "",
+    desiredEffectiveDate: "",
+    lossLast3Years: "",
+    lossCount: "",
+    lossDate: "",
+    lossLineOfBusiness: "",
+    lossAmountPaid: "",
+    lossHistoryStatus: "",
+    additionalDrivers: "",
+    additionalVehicles: "",
+    entityType: "",
+    fein: "",
   });
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
@@ -188,7 +208,7 @@ export default function QuotePage() {
                       </div>
                       <div>
                         <label htmlFor="driver_names" className={labelClass}>All drivers - name, date of birth and licence number</label>
-                        <textarea id="driver_names" name="driver_names" rows={3} value={formData.driver_names} onChange={handleChange} className={`${{inputClass}} resize-none`} />
+                        <textarea id="driver_names" name="driver_names" rows={3} value={formData.driver_names} onChange={handleChange} className={`${inputClass} resize-none`} />
                       </div>
                       <div>
                         <label htmlFor="vehicle_year" className={labelClass}>Vehicle year</label>
@@ -204,7 +224,7 @@ export default function QuotePage() {
                       </div>
                       <div>
                         <label htmlFor="vehicle_vin" className={labelClass}>VIN - every vehicle and trailer</label>
-                        <textarea id="vehicle_vin" name="vehicle_vin" rows={3} value={formData.vehicle_vin} onChange={handleChange} className={`${{inputClass}} resize-none`} />
+                        <textarea id="vehicle_vin" name="vehicle_vin" rows={3} value={formData.vehicle_vin} onChange={handleChange} className={`${inputClass} resize-none`} />
                       </div>
                       <div>
                         <label htmlFor="vehicle_value" className={labelClass}>Vehicle value</label>
@@ -212,7 +232,7 @@ export default function QuotePage() {
                       </div>
                       <div>
                         <label htmlFor="accessories_description" className={labelClass}>Description of accessories</label>
-                        <textarea id="accessories_description" name="accessories_description" rows={3} value={formData.accessories_description} onChange={handleChange} className={`${{inputClass}} resize-none`} />
+                        <textarea id="accessories_description" name="accessories_description" rows={3} value={formData.accessories_description} onChange={handleChange} className={`${inputClass} resize-none`} />
                       </div>
                       <div>
                         <label htmlFor="accessories_value" className={labelClass}>Value of accessories</label>
@@ -239,8 +259,96 @@ export default function QuotePage() {
                         <input id="prior_auto_insurance" name="prior_auto_insurance" type="text" value={formData.prior_auto_insurance} onChange={handleChange} className={inputClass} />
                       </div>
                       <div>
-                        <label htmlFor="coverage_type" className={labelClass}>Coverage type (Personal / Commercial / Track Day)</label>
+                        <label htmlFor="coverage_type" className={labelClass}>Coverage type (Personal / Commercial)</label>
                         <input id="coverage_type" name="coverage_type" type="text" value={formData.coverage_type} onChange={handleChange} className={inputClass} />
+                      </div>
+
+                      <div>
+                        <label htmlFor="lienholderName" className={labelClass}>Lienholder / loss payee name (optional)</label>
+                        <input id="lienholderName" name="lienholderName" type="text" value={formData.lienholderName} onChange={handleChange} className={inputClass} />
+                      </div>
+                      <div>
+                        <label htmlFor="lienholderAddress" className={labelClass}>Lienholder / loss payee address (optional)</label>
+                        <input id="lienholderAddress" name="lienholderAddress" type="text" value={formData.lienholderAddress} onChange={handleChange} className={inputClass} />
+                      </div>
+                      <div>
+                        <label htmlFor="liftHeightInches" className={labelClass}>Lift height in inches (optional)</label>
+                        <input id="liftHeightInches" name="liftHeightInches" type="number" min="0" step="0.5" value={formData.liftHeightInches} onChange={handleChange} className={inputClass} />
+                      </div>
+                      <div>
+                        <label htmlFor="tireSize" className={labelClass}>Tire size (optional)</label>
+                        <input id="tireSize" name="tireSize" type="text" value={formData.tireSize} onChange={handleChange} className={inputClass} />
+                      </div>
+                      <div>
+                        <label htmlFor="suspensionDetails" className={labelClass}>Suspension / lift kit details (optional)</label>
+                        <textarea id="suspensionDetails" name="suspensionDetails" rows={3} value={formData.suspensionDetails} onChange={handleChange} className={`${inputClass} resize-none`} />
+                      </div>
+                      <div>
+                        <label htmlFor="garagingZip" className={labelClass}>Garaging ZIP code (optional)</label>
+                        <input id="garagingZip" name="garagingZip" type="text" inputMode="numeric" maxLength={10} value={formData.garagingZip} onChange={handleChange} className={inputClass} />
+                      </div>
+                      <div>
+                        <label htmlFor="annualMileage" className={labelClass}>Estimated annual mileage (optional)</label>
+                        <input id="annualMileage" name="annualMileage" type="number" min="0" value={formData.annualMileage} onChange={handleChange} className={inputClass} />
+                      </div>
+                      <div>
+                        <label htmlFor="vehicleUse" className={labelClass}>Vehicle use (optional)</label>
+                        <select id="vehicleUse" name="vehicleUse" value={formData.vehicleUse} onChange={handleChange} className={inputClass}><option value="">Select&hellip;</option><option value="Personal">Personal</option><option value="Commercial">Commercial</option><option value="Both personal and commercial">Both personal and commercial</option></select>
+                      </div>
+                      <div>
+                        <label htmlFor="requestedLimits" className={labelClass}>Requested coverage limits (optional)</label>
+                        <input id="requestedLimits" name="requestedLimits" type="text" value={formData.requestedLimits} onChange={handleChange} className={inputClass} />
+                      </div>
+                      <div>
+                        <label htmlFor="desiredEffectiveDate" className={labelClass}>Desired effective date (optional)</label>
+                        <input id="desiredEffectiveDate" name="desiredEffectiveDate" type="date" value={formData.desiredEffectiveDate} onChange={handleChange} className={inputClass} />
+                      </div>
+                      <fieldset>
+                        <legend className={labelClass}>Any losses or claims in the last 3 years? (optional)</legend>
+                        <div className="flex gap-6">
+                          <label className="inline-flex items-center gap-2 text-sm text-espresso"><input type="radio" name="lossLast3Years" value="Yes" checked={formData.lossLast3Years === "Yes"} onChange={handleChange} /> Yes</label>
+                          <label className="inline-flex items-center gap-2 text-sm text-espresso"><input type="radio" name="lossLast3Years" value="No" checked={formData.lossLast3Years === "No"} onChange={handleChange} /> No</label>
+                        </div>
+                      </fieldset>
+                      {formData.lossLast3Years === "Yes" && (
+                        <div className="space-y-5">
+                      <div>
+                        <label htmlFor="lossCount" className={labelClass}>Number of losses (optional)</label>
+                        <input id="lossCount" name="lossCount" type="number" min="0" value={formData.lossCount} onChange={handleChange} className={inputClass} />
+                      </div>
+                      <div>
+                        <label htmlFor="lossDate" className={labelClass}>Date of most recent loss (optional)</label>
+                        <input id="lossDate" name="lossDate" type="date" value={formData.lossDate} onChange={handleChange} className={inputClass} />
+                      </div>
+                      <div>
+                        <label htmlFor="lossLineOfBusiness" className={labelClass}>Line of business of the loss (optional)</label>
+                        <input id="lossLineOfBusiness" name="lossLineOfBusiness" type="text" value={formData.lossLineOfBusiness} onChange={handleChange} className={inputClass} />
+                      </div>
+                      <div>
+                        <label htmlFor="lossAmountPaid" className={labelClass}>Amount paid (optional)</label>
+                        <input id="lossAmountPaid" name="lossAmountPaid" type="text" value={formData.lossAmountPaid} onChange={handleChange} className={inputClass} />
+                      </div>
+                      <div>
+                        <label htmlFor="lossHistoryStatus" className={labelClass}>Claim status, open or closed (optional)</label>
+                        <input id="lossHistoryStatus" name="lossHistoryStatus" type="text" value={formData.lossHistoryStatus} onChange={handleChange} className={inputClass} />
+                      </div>
+                        </div>
+                      )}
+                      <div>
+                        <label htmlFor="additionalDrivers" className={labelClass}>Additional drivers: names and relationship (optional)</label>
+                        <textarea id="additionalDrivers" name="additionalDrivers" rows={3} value={formData.additionalDrivers} onChange={handleChange} className={`${inputClass} resize-none`} />
+                      </div>
+                      <div>
+                        <label htmlFor="additionalVehicles" className={labelClass}>Additional vehicles or trailers: year, make, model (optional)</label>
+                        <textarea id="additionalVehicles" name="additionalVehicles" rows={3} value={formData.additionalVehicles} onChange={handleChange} className={`${inputClass} resize-none`} />
+                      </div>
+                      <div>
+                        <label htmlFor="entityType" className={labelClass}>Business entity type, commercial buyers (optional)</label>
+                        <select id="entityType" name="entityType" value={formData.entityType} onChange={handleChange} className={inputClass}><option value="">Select&hellip;</option><option value="Individual">Individual</option><option value="Sole proprietor">Sole proprietor</option><option value="LLC">LLC</option><option value="Corporation">Corporation</option><option value="Partnership">Partnership</option><option value="Other">Other</option></select>
+                      </div>
+                      <div>
+                        <label htmlFor="fein" className={labelClass}>FEIN, commercial buyers only (optional)</label>
+                        <input id="fein" name="fein" type="text" value={formData.fein} onChange={handleChange} className={inputClass} />
                       </div>
 
                       <button type="submit" disabled={submitting} className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-clay-gradient text-white font-heading font-bold rounded-full shadow-warm hover:shadow-warm-lg hover:-translate-y-0.5 transition-all disabled:opacity-60 disabled:cursor-not-allowed">
